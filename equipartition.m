@@ -1,9 +1,11 @@
 function partitionBounds = equipartition(x, y, n)
 %x and y are the parametric functions
 %n is the target number of partitions to split into
+
 midpoint = floor(n/2);
 firstQuartile = floor(n/4);
 thirdQuartile = floor(3 * n / 4);
+
 %we get some early points to serve as bounds
 %now all bisections will only have to go over one fourth of the graph
 
@@ -13,7 +15,9 @@ h = 1/n;
 results = 1:n+1;
 results(1) = 0;
 results(n + 1) = 1;
+
 %set up vector with partition bounds, set first to 0 and last to 1
+
 
 results(midpoint + 1) = distanceAlongParametric(x, y, 0, 1, midpoint * h);
 results(firstQuartile + 1) = distanceAlongParametric(x, y, 0, results(midpoint + 1), firstQuartile * h);
@@ -41,6 +45,8 @@ end
 %1/4th the total length of the arc. this should speed up calculation, as
 %each bound is now already 1/4th the total
 
+%this optimization makes the code much longer and more confusing, but it
+%also saves .2 seconds at n = 200 so I can't get rid of it now
 
 hold on
 for i=1:n
