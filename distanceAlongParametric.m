@@ -15,13 +15,13 @@ arcLengthPortion = matlabFunction(sqrt(xPrime^2 + yPrime^2));
 %get the function we put in the integral. matlab function allows it to be
 %used with numerical integration, as matlab as trouble integrating this
 %symbolically
-totalArcLength = integral(arcLengthPortion, 0, 1);
+totalArcLength = quadrature(arcLengthPortion, 0, 1, 0.5*10^-3);
 %get the arc length from 0 to 1
 
 while(true)
     m = (a + b)/2;
     %bisection method. get our midpoint
-    lengthToM = integral(arcLengthPortion, 0, m);
+    lengthToM = quadrature(arcLengthPortion, 0, m, 0.5*10^-3);
     currentS = lengthToM/totalArcLength;
     %get length from 0 to the midpoint, and then find the ratio of that to
     %the total length
