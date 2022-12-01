@@ -1,5 +1,6 @@
 function partitionBounds = equipartitionNewton(x, y, n)
-
+%X AND Y SHOULD BE SYMBOLIC, NOT ANONYMOUS
+%n is the number of partitions
 %saves no time over normal equipartition at n = 200
 
 h = 1/n;

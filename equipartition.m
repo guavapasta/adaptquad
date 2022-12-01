@@ -1,5 +1,6 @@
 function partitionBounds = equipartition(x, y, n)
 %x and y are the parametric functions
+%X AND Y SHOULD BE SYMBOLIC, NOT ANONYMOUS
 %n is the target number of partitions to split into
 
 midpoint = floor(n/2);
