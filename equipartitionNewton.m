@@ -18,9 +18,9 @@ end
 hold on
 for i=1:n
     t = linspace(results(i), results(i + 1));
-    x = 0.5 + 0.3*t + 3.9*t.^2 - 4.7*t.^3;
-    y = 1.5 + 0.3*t + 0.9*t.^2 - 2.7*t.^3;
-    plot(x, y);
+    xPoints = x(t);
+    yPoints = y(t);
+    plot(xPoints, yPoints);
 end
 hold off
 
