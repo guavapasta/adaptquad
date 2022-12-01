@@ -3,7 +3,7 @@ function [] = traverseProgressCurve(Px, Py, C)
 %C is the arbitrary progress curve which defines the speed at which the
 %function is traversed
 
-set(gca,'XLim', [floor(Px(0)) ceil(Px(1))], 'YLim', [floor(Py(0)) ceil(Py(1))], 'Drawmode','fast','Visible','on');
+set(gca,'XLim', [floor(min(Px(0:0.01:1))) ceil(max(Px(0:0.01:1)))], 'YLim', [floor(min(Py(0:0.01:1))) ceil(max(Py(0:0.01:1)))], 'Drawmode','fast','Visible','on');
 %create the window to draw the animation
 %bounds set by the bounds of the function, rounded up
 cla
@@ -20,10 +20,3 @@ for s = 0:0.01:1
     drawnow;pause(0.01)
 end
 end
-
-
-
-
-
-%the proportion c(s) of the paths total arc length is traversed between 0
-%and s
