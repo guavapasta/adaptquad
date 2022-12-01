@@ -4,8 +4,10 @@ function tStar = distanceAlongParametricNewton(x, y, s)
 %s is the distance along the curve we want to find
 
 syms t
-xPrime = diff(x);
-yPrime = diff(y);
+xSym = sym(x);
+ySym = sym(y);
+xPrime = diff(xSym);
+yPrime = diff(ySym);
 %get the derivatives of x and y, which we need for computing arc length
 arcLengthPortion = matlabFunction(sqrt(xPrime^2 + yPrime^2));
 %get the function we put in the integral. matlab function allows it to be
