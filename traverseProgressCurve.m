@@ -20,10 +20,3 @@ for s = 0:0.01:1
     drawnow;pause(0.01)
 end
 end
-
-
-
-
-
-%the proportion c(s) of the paths total arc length is traversed between 0
-%and s
