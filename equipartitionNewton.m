@@ -1,3 +1,4 @@
+%Problem 4
 function partitionBounds = equipartitionNewton(x, y, n)
 %n is the number of partitions
 %saves no time over normal equipartition at n = 200
@@ -11,7 +12,7 @@ results(n + 1) = 1;
 %set up vector with partition bounds, set first to 0 and last to 1
 
 for i = 2:n
-    results(i) = distanceAlongParametricNewton(x, y, (i - 1) * h);
+    results(i) = distanceAlongParametricNewton(x, y, (i - 1) * h, results(i - 1));
 end
 %first vector member needs to be 0, so our indices are 1 ahead of our i
 
