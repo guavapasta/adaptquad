@@ -4,12 +4,13 @@ function [] = traverseProgressCurve(Px, Py, C)
 %function is traversed
 
 
-set(gca,'XLim', [floor(min(Px(0:0.01:1))) ceil(max(Px(0:0.01:1)))], 'YLim', [floor(min(Py(0:0.01:1))) ceil(max(Py(0:0.01:1)))], 'Drawmode','fast','Visible','on');
+set(gca,'XLim', [min(Px(0:0.01:1))-0.3 max(Px(0:0.01:1))+0.3], 'YLim', [min(Py(0:0.01:1))-0.3 max(Py(0:0.01:1))+0.3], 'Drawmode','fast','Visible','on');
 %create the window to draw the animation
 %bounds set by the bounds of the function, rounded up
 cla
-axis off
+axis square
 i = 0:0.01:1;
+hold on
 plot(Px(i),Py(i))
 pointer = animatedline('color','r','Marker','o','MarkerSize',5,'MarkerFaceColor','r');
 
