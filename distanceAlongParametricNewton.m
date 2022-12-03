@@ -1,7 +1,9 @@
-function tStar = distanceAlongParametricNewton(x, y, s)
+%Problem 4
+function tStar = distanceAlongParametricNewton(x, y, s, s0)
 %Find the point t*(s) that is s of the way along a curve
 %x and y and the x and y functions that define a parametric curve
 %s is the distance along the curve we want to find
+%s0 is the initial guess
 
 syms t
 xSym = sym(x);
@@ -15,7 +17,7 @@ arcLengthPortion = matlabFunction(sqrt(xPrime^2 + yPrime^2));
 %symbolically
 totalArcLength = quadrature(arcLengthPortion, 0, 1, 0.5*10^-3);
 %get the arc length from 0 to 1
-currentT = s;
+currentT = s0;
 %our initial guess is equal to the portion along the graph we want to find
 currentS = quadrature(arcLengthPortion, 0, currentT, 0.5*10^-3)/totalArcLength;
 

@@ -1,3 +1,4 @@
+%Problem 2
 function tStar = distanceAlongParametric(x, y, a, b, s)
 %Find the point t*(s) that is s of the way along a curve
 %x and y and the x and y functions that define a parametric curve

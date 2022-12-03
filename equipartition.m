@@ -1,3 +1,4 @@
+%Problem 3
 function partitionBounds = equipartition(x, y, n)
 %x and y are the parametric functions
 %n is the target number of partitions to split into
