@@ -1,6 +1,6 @@
 % animates different transversal of curve
 % arc length parameter vs time parameter
-%Problem 5
+% Problem 5
 % taken from book, initializes axes, plot, and ball objects
 set(gca,'XLim',[-2 2],'YLim',[-2 2],'Drawmode','fast','Visible','on');
 cla
@@ -21,10 +21,10 @@ f2=1.5+0.3*t+0.9*t.^2-2.7*t.^3;
 % finding arc length parameter
 t2 = zeros(20,1);
 for i= 0:20
-    t2(i+1) = distanceAlongParametricNewton(x, y, 0.05*i, 0.05*i);
+    t2(i+1) = distanceAlongParametricNewton(x, y, 0.05*i, 0.5);
 end
 
-% sime functions parametrized by arc length
+% same functions parametrized by arc length
 g1=0.5+0.3*t2+3.9*t2.^2-4.7*t2.^3;
 g2=1.5+0.3*t2+0.9*t2.^2-2.7*t2.^3;
 
