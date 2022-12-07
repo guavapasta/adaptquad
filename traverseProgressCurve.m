@@ -1,3 +1,4 @@
+%Problem 7
 function [] = traverseProgressCurve(Px, Py, C)
 %Px and Py are the parametric functions describing the path P
 %C is the arbitrary progress curve which defines the speed at which the

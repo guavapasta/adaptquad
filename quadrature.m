@@ -2,6 +2,7 @@
 % Computes approximation to definite integral
 % Inputs: Matlab function f, interval [a0,b0], error tolerance tol0
 % Output: approximate definite integral
+%Problem 1
 function int = quadrature(f, a0, b0, tol0)
 int = 0;
 n = 1;
